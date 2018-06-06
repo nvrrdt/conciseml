@@ -7,9 +7,14 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'collapse',
+      component: require('@/components/DueDateView/CollapsableMail').default
+    },
+    /* {
+      path: '/',
       name: 'landing-page',
       component: require('@/components/LandingPage').default
-    },
+    }, */
     {
       path: '*',
       redirect: '/'
