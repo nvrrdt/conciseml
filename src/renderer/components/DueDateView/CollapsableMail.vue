@@ -3,7 +3,7 @@
   <div>
     <b-list-group v-for="(mail, index) in mails" :key="index">
       <b-list-group-item>
-        <b-btn v-b-toggle="'index-'+index" variant="link">{{ mail.mail }}</b-btn>
+        <b-btn v-b-toggle="'index-'+index" v-on:click="getMailBody(index)" variant="link">{{ mail.mail }}</b-btn>
         <b-collapse :id="'index-'+index" class="mt-2">
           <p>test {{ mail }} </p>
         </b-collapse>
@@ -23,6 +23,10 @@
       }
     },
     methods: {
+      getMailBody (index) {
+        var data = this.mails[index].mail
+        this.$root.$emit('emailBody', data)
+      }
     }
   }
 </script>

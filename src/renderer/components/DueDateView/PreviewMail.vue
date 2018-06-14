@@ -5,15 +5,18 @@
 </template>
 
 <script>
-import testmails from '@/components/DueDateView/testmails.json'
-
 export default {
   data () {
     return {
-      mailBody: testmails
+      mailBody: ''
     }
   },
   methods: {
+  },
+  mounted () {
+    this.$root.$on('emailBody', data => {
+      this.mailBody = data
+    })
   }
 }
 </script>
