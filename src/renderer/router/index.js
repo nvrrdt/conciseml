@@ -8,7 +8,7 @@ export default new Router({
     {
       path: '/',
       name: 'collapse',
-      component: require('@/components/DueDateView/CollapsableMail').default
+      component: require('@/components/MainGUI').default
     },
     /* {
       path: '/',

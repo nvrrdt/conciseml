@@ -1,10 +1,10 @@
 <template>
 <div>
   <div>
-    <b-list-group v-for="(mail, index) in mails" :key="index" :id="index">
+    <b-list-group v-for="(mail, index) in mails" :key="index">
       <b-list-group-item>
-        <b-btn v-b-toggle="index" variant="link">{{ mail.mail }}</b-btn>
-        <b-collapse :id="index" class="mt-2">
+        <b-btn v-b-toggle="'index-'+index" variant="link">{{ mail.mail }}</b-btn>
+        <b-collapse :id="'index-'+index" class="mt-2">
           <p>test {{ mail }} </p>
         </b-collapse>
       </b-list-group-item>
