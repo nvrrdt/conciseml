@@ -1,9 +1,8 @@
 <template>
-<div>
   <div role="tablist">
     <b-card no-body class="mb-1" v-for="(mail, index) in mails" :key="index">
       <b-card-header header-tag="header" class="p-1" role="tab">
-        <b-btn block v-b-toggle="'index-'+index" variant="secondary" v-on:click="getMailBody(index)">{{ mail.mail }}</b-btn>
+        <b-btn block v-b-toggle="'index-'+index" variant="link" v-on:click="getMailBody(index)">{{ mail.mail }}</b-btn>
       </b-card-header>
       <b-collapse :id="'index-'+index" accordion="my-accordion" role="tabpanel">
         <b-card-body>
@@ -14,7 +13,6 @@
       </b-collapse>
     </b-card>
   </div>
-</div>
 </template>
 
 <script>
