@@ -1,9 +1,13 @@
 <template>
   <b-container fluid>
-    <b-row>
-      <b-col><collapsible-mail></collapsible-mail></b-col>
-      <b-col><preview-mail></preview-mail></b-col>
-    </b-row>
+    <Split style="height: 100vh">
+      <SplitArea :size="50">
+        <collapsible-mail></collapsible-mail>
+      </SplitArea>
+      <SplitArea :size="50">
+        <preview-mail></preview-mail>
+      </SplitArea>
+    </Split>
   </b-container>
 </template>
 
