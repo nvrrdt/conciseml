@@ -1,13 +1,57 @@
 [
-  {"mail": "testmail0"},
-  {"mail": "testmail1"},
-  {"mail": "testmail2"},
-  {"mail": "testmail3"},
-  {"mail": "testmail4"},
-  {"mail": "testmail5"},
-  {"mail": "testmail6"},
-  {"mail": "testmail7"},
-  {"mail": "testmail8"},
-  {"mail": "testmail9"},
-  {"mail": "testmail10"}
+  {
+    "mail": "testmail0",
+    "title": "Social credit system",
+    "body": "Hi, I created something that could be a base system. Anyone willing to review my code?"
+  },
+  {
+    "mail": "testmail1",
+    "title": "IOTA",
+    "body": "Dear, the proof of work used by IOTA is minimal compared to Bitcoin ..."
+  },
+  {
+    "mail": "testmail2",
+    "title": "Blockchain is marvellous",
+    "body": "Read my lips: no one is going away with a lie in the future or he/she will be excluded from certain environments."
+  },
+  {
+    "mail": "testmail3",
+    "title": "The cat has lost a leg",
+    "body": "OMG. She ran under a car and we had to get to the vet with her, who amputed her leg."
+  },
+  {
+    "mail": "testmail4",
+    "title": "Firebase",
+    "body": "Anyone has an idea how to do authenticate?"
+  },
+  {
+    "mail": "testmail5",
+    "title": "Meal vouchers",
+    "body": "Dear, this month I wasn't able yet to use them. Kind regards, Nico."
+  },
+  {
+    "mail": "testmail6",
+    "title": "I really need a new car",
+    "body": "Dear Christophe, my car is too slow and too small. I'm looking forward to order a Mercedes S63 style car. Or a Tesla P100D. Best regards, Nico."
+  },
+  {
+    "mail": "testmail7",
+    "title": "A real game changer",
+    "body": "All, if we just could add a learning factor to game theory, then it would be fine. Kind regards, Nico."
+  },
+  {
+    "mail": "testmail8",
+    "title": "Who's that famous Satoshi Nakamoto?",
+    "body": "I have no idea who he is, did he let us a clou? Anyone has an idea?"
+  },
+  {
+    "mail": "testmail9",
+    "title": "IMF",
+    "body": "Andrea, there should be something we can do to tackle bitcoin and its alternatives. Kind regards, Nico."
+  },
+  {
+    "mail": "testmail10",
+    "title": "BIB Basel",
+    "body": "All, we need to do something ..."
+  }
 ]
