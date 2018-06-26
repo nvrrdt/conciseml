@@ -9,6 +9,7 @@
           <p class="card-text">
             {{ mail }}
           </p>
+          <p>project, cat1 (container-badges-link), cat2, due date, list of mails</p>
         </b-card-body>
       </b-collapse>
     </b-card>
