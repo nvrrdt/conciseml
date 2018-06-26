@@ -17,7 +17,9 @@
 </template>
 
 <script>
+  import Vue from 'vue'
   import testmails from './testmails.json'
+  import db from '@/datastore.js'
 
   export default {
     data () {
@@ -29,6 +31,9 @@
       getMailBody (index) {
         var data = this.mails[index].body
         this.$root.$emit('emailBody', data)
+      },
+      getProjects () {
+        Vue.prototype.$db = db
       }
     }
   }
