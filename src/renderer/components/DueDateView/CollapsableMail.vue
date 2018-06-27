@@ -2,7 +2,12 @@
   <div role="tablist">
     <b-card no-body class="border-0" v-for="(mail, index) in mails" :key="index">
       <b-card-header header-tag="header" class="p-0 m-0" role="tab">
-        <b-btn block class="text-left p-0 ml-2" v-b-toggle="'index-'+index" variant="link" v-on:click="getMailBody(index)">{{ mail.title }}</b-btn>
+        <b-btn block class="text-left p-0 ml-2" v-b-toggle="'index-'+index" variant="link" v-on:click="getMailBody(index)">
+          {{ mail.project }} 
+          <span class="border"> {{ mail.categories1 }} </span>
+          <span class="border"> {{ mail.categories2 }} </span>
+          {{ mail.duedate }}
+        </b-btn>
       </b-card-header>
       <b-collapse :id="'index-'+index" accordion="my-accordion" role="tabpanel">
         <b-card-body>

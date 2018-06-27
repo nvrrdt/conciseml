@@ -1,0 +1,18 @@
+{
+  "first": {
+    "coins": "coins",
+    "banks": "banks",
+    "cats": "cats",
+    "technology": "technology",
+    "social": "social",
+    "varia": "varia"
+  },
+  "second": {
+    "Sophie": "Sophie",
+    "Tom": "Tom",
+    "Bridget": "Bridget",
+    "Philibert": "Philibert",
+    "Helen": "Helen",
+    "Pierre": "Pierre"
+  }
+}
