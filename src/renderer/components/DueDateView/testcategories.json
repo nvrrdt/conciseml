@@ -1,18 +1,18 @@
 {
-  "first": {
-    "coins": "coins",
-    "banks": "banks",
-    "cats": "cats",
-    "technology": "technology",
-    "social": "social",
-    "varia": "varia"
+  "colors1": {
+    "coins": "yellow",
+    "banks": "blue",
+    "cats": "lightblue",
+    "technology": "green",
+    "social": "lightgreen",
+    "varia": "orange"
   },
-  "second": {
-    "Sophie": "Sophie",
-    "Tom": "Tom",
-    "Bridget": "Bridget",
-    "Philibert": "Philibert",
-    "Helen": "Helen",
-    "Pierre": "Pierre"
+  "colors2": {
+    "Sophie": "red",
+    "Tom": "yellow",
+    "Bridget": "green",
+    "Philibert": "blue",
+    "Helen": "purple",
+    "Pierre": "pink"
   }
 }

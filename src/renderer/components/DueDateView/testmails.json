@@ -2,100 +2,56 @@
   {
     "mail": "testmail0",
     "title": "Social credit system",
-    "body": "Hi, I created something that could be a base system. Anyone willing to review my code?",
-    "project": "social credit",
-    "duedate": "01102018",
-    "categories1": [ "social" ],
-    "categories2": [ "Helen", "Pierre", "Tom" ]
+    "body": "Hi, I created something that could be a base system. Anyone willing to review my code?"
   },
   {
     "mail": "testmail1",
     "title": "IOTA",
-    "body": "Dear, the proof of work used by IOTA is minimal compared to Bitcoin ...",
-    "project": "iota",
-    "duedate": "08092018",
-    "categories1": [ "coins" ],
-    "categories2": [ "Sophie", "Bridget", "Tom" ]
+    "body": "Dear, the proof of work used by IOTA is minimal compared to Bitcoin ..."
   },
   {
     "mail": "testmail2",
     "title": "Blockchain is marvellous",
-    "body": "Read my lips: no one is going away with a lie in the future or he/she will be excluded from certain environments.",
-    "project": "blockchain",
-    "duedate": "01042019",
-    "categories1": [ "technology" ],
-    "categories2": [ "Philibert" ]
+    "body": "Read my lips: no one is going away with a lie in the future or he/she will be excluded from certain environments."
   },
   {
     "mail": "testmail3",
     "title": "The cat has lost a leg",
-    "body": "OMG. She ran under a car and we had to go to the vet with her, who amputed her leg.",
-    "project": "cat",
-    "duedate": "10092019",
-    "categories1": [ "cats" ],
-    "categories2": [ "Pierre", "Tom" ]
+    "body": "OMG. She ran under a car and we had to go to the vet with her, who amputed her leg."
   },
   {
     "mail": "testmail4",
     "title": "Firebase",
-    "body": "Anyone has an idea how to do authenticate?",
-    "project": "firebase",
-    "duedate": "01072018",
-    "categories1": [ "technology" ],
-    "categories2": [ "Helen", "Pierre" ]
+    "body": "Anyone has an idea how to do authenticate?"
   },
   {
     "mail": "testmail5",
     "title": "Meal vouchers",
-    "body": "Dear, this month I wasn't able yet to use them. Kind regards, Nico.",
-    "project": "meal vouchers",
-    "duedate": "01072018",
-    "categories1": [ "varia" ],
-    "categories2": [ "Bridget" ]
+    "body": "Dear, this month I wasn't able yet to use them. Kind regards, Nico."
   },
   {
     "mail": "testmail6",
     "title": "I really need a new car",
-    "body": "Dear Christophe, my car is too slow and too small. I'm looking forward to order a Mercedes S63 style car. Or a Tesla P100D. Best regards, Nico.",
-    "project": "car",
-    "duedate": "01052018",
-    "categories1": [ "varia" ],
-    "categories2": [ "Helen", "Pierre", "Bridget" ]
+    "body": "Dear Christophe, my car is too slow and too small. I'm looking forward to order a Mercedes S63 style car. Or a Tesla P100D. Best regards, Nico."
   },
   {
     "mail": "testmail7",
     "title": "A real game changer",
-    "body": "All, if we just could add a learning factor to game theory, then it would be fine. Kind regards, Nico.",
-    "project": "ai",
-    "duedate": "17082018",
-    "categories1": [ "social", "technology" ],
-    "categories2": [ "Helen", "Pierre", "Tom", "Bridget" ]
+    "body": "All, if we just could add a learning factor to game theory, then it would be fine. Kind regards, Nico."
   },
   {
     "mail": "testmail8",
     "title": "Who's that famous Satoshi Nakamoto?",
-    "body": "I have no idea who he is, did he let us a clou? Anyone has an idea?",
-    "project": "bitcoin",
-    "duedate": "01092018",
-    "categories1": [ "coins", "technology" ],
-    "categories2": [ "Helen", "Pierre", "Tom" ]
+    "body": "I have no idea who he is, did he let us a clou? Anyone has an idea?"
   },
   {
     "mail": "testmail9",
     "title": "IMF",
-    "body": "Andrea, there should be something we can do to tackle bitcoin and its alternatives. Kind regards, Nico.",
-    "project": "bitcoin",
-    "duedate": "01112019",
-    "categories1": [ "coins", "technology" ],
-    "categories2": [ "Helen", "Pierre", "Tom" ]
+    "body": "Andrea, there should be something we can do to tackle bitcoin and its alternatives. Kind regards, Nico."
   },
   {
     "mail": "testmail10",
     "title": "BIB Basel",
-    "body": "All, we need to do something ...",
-    "project": "bank",
-    "duedate": "01092018",
-    "categories1": [ "banks" ],
-    "categories2": [ "Helen" ]
+    "body": "All, we need to do something ..."
   }
 ]
