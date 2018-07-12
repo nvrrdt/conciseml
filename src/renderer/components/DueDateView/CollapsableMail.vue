@@ -15,10 +15,7 @@
       </b-card-header>
       <b-collapse :id="'index-'+index" accordion="my-accordion" role="tabpanel">
         <b-card-body>
-          <p class="card-text">
-            {{ project.mail }}
-          </p>
-          <p>project, cat1 (container-badges-link), cat2, due date, list of mails</p>
+          <project-information v-bind:project="project"></project-information>
         </b-card-body>
       </b-collapse>
     </b-card>
@@ -30,9 +27,13 @@
   // import testmails from './testmails.json'
   import testcategories from './testcategories.json'
   import testprojects from './testprojects.json'
+  import ProjectInformation from '@/components/DueDateView/ProjectInformation'
   import db from '@/datastore.js'
 
   export default {
+    components: {
+      ProjectInformation
+    },
     data () {
       return {
         // mails: testmails, // link to real mails!!
