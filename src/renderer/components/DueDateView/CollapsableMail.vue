@@ -3,14 +3,26 @@
     <b-card no-body class="border-0" v-for="(project, index) in testprojects" :key="index">
       <b-card-header header-tag="header" class="p-0 m-0" role="tab">
         <b-btn block class="text-left p-0 ml-2" v-b-toggle="'index-'+index" variant="link" v-on:click="getMailBody(index)">
-          {{ project.project }} 
-          <span class="border border-dark">
-            <b-badge pill v-for="cat1 in getCategories1(index)" :key="cat1" v-bind:style="{ background: getColors1(cat1) }">&nbsp;</b-badge>
-          </span>
-          <span class="border border-dark">
-            <b-badge pill v-for="cat2 in getCategories2(index)" :key="cat2" v-bind:style="{ background: getColors2(cat2) }">&nbsp;</b-badge>
-          </span>
-          {{ project.duedate }}
+          <div class="container">
+            <div class="row">
+              <div class="col-3">
+                {{ project.project }}
+              </div>
+              <div class="col-3">
+                <span class="border border-dark">
+                  <b-badge pill v-for="cat1 in getCategories1(index)" :key="cat1" v-bind:style="{ background: getColors1(cat1) }">&nbsp;</b-badge>
+                </span>
+              </div>
+              <div class="col-3">
+                <span class="border border-dark">
+                  <b-badge pill v-for="cat2 in getCategories2(index)" :key="cat2" v-bind:style="{ background: getColors2(cat2) }">&nbsp;</b-badge>
+                </span>
+              </div>
+              <div class="col-3">
+                {{ project.duedate }}
+              </div>
+            </div>
+          </div>
         </b-btn>
       </b-card-header>
       <b-collapse :id="'index-'+index" accordion="my-accordion" role="tabpanel">
