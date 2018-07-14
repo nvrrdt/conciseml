@@ -27,7 +27,13 @@
       </b-card-header>
       <b-collapse :id="'index-'+index" accordion="my-accordion" role="tabpanel">
         <b-card-body>
-          <project-information v-bind:project="project"></project-information>
+          <project-information v-bind:project="project"
+                              v-bind:index="index"
+                              v-bind:getCategories1="getCategories1"
+                              v-bind:getCategories2="getCategories2"
+                              v-bind:getColors1="getColors1"
+                              v-bind:getColors2="getColors2">
+          </project-information>
         </b-card-body>
       </b-collapse>
     </b-card>
