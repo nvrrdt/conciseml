@@ -30,7 +30,7 @@ This project was generated with [electron-vue](https://github.com/SimulatedGREG/
 
 ### General features
 ```
-user actions tracking / history, dus authentication
+user actions tracking / history, thus authentication
 same project basket naming / basket view
 final date quote
 send whole quotes to basket accounts
