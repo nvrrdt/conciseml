@@ -1,26 +1,50 @@
 <template>
   <b-container fluid>
     <b-row>
-    <Split style="height: 100vh">
-      <SplitArea :size="50">
-        <collapsible-mail></collapsible-mail>
-      </SplitArea>
-      <SplitArea :size="50">
-        <preview-mail></preview-mail>
-      </SplitArea>
-    </Split>
+      <b-button size="sm" variant="primary" style="margin: 5px 5px 5px 5px" @click="setClassicView()">Classic view</b-button>
+      <b-button size="sm" variant="primary" style="margin: 5px 5px 5px 5px" @click="setProjectView()">Project view</b-button>
+      <!-- <b-button size="sm" variant="primary" style="margin: 5px 5px 5px 5px">History</b-button> -->
+    </b-row>
+    <b-row>
+      <Split style="height: 100vh">
+        <SplitArea :size="50">
+          <classic-view v-if="classicView"></classic-view>
+          <project-view v-if="projectView"></project-view>
+        </SplitArea>
+        <SplitArea :size="50">
+          <preview-mail></preview-mail>
+        </SplitArea>
+      </Split>
     </b-row>
   </b-container>
 </template>
 
 <script>
-import CollapsibleMail from '@/components/DueDateView/CollapsableMail'
+import ProjectView from '@/components/DueDateView/ProjectView'
+import ClassicView from '@/components/DueDateView/ClassicView'
 import PreviewMail from '@/components/DueDateView/PreviewMail'
 
 export default {
   components: {
-    CollapsibleMail,
+    ClassicView,
+    ProjectView,
     PreviewMail
+  },
+  data () {
+    return {
+      classicView: true,
+      projectView: false
+    }
+  },
+  methods: {
+    setClassicView () {
+      this.classicView = true
+      this.projectView = false
+    },
+    setProjectView () {
+      this.classicView = false
+      this.projectView = true
+    }
   }
 }
 </script>
