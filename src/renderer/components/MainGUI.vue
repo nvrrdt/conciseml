@@ -6,13 +6,20 @@
       <!-- <b-button size="sm" variant="primary" style="margin: 5px 5px 5px 5px">History</b-button> -->
     </b-row>
     <b-row>
-      <Split style="height: 100vh">
+      <Split style="height: 100vh" direction="horizontal">
         <SplitArea :size="50">
           <classic-view v-if="classicView"></classic-view>
           <project-view v-if="projectView"></project-view>
         </SplitArea>
         <SplitArea :size="50">
-          <preview-mail></preview-mail>
+          <Split direction="vertical">
+            <SplitArea :size="30">
+              <project-information></project-information>
+            </SplitArea>
+            <SplitArea :size="70">
+              <preview-mail></preview-mail>
+            </SplitArea>
+          </Split>
         </SplitArea>
       </Split>
     </b-row>
@@ -22,12 +29,14 @@
 <script>
 import ProjectView from '@/components/DueDateView/ProjectView'
 import ClassicView from '@/components/DueDateView/ClassicView'
+import ProjectInformation from '@/components/DueDateView/ProjectInformation'
 import PreviewMail from '@/components/DueDateView/PreviewMail'
 
 export default {
   components: {
     ClassicView,
     ProjectView,
+    ProjectInformation,
     PreviewMail
   },
   data () {
