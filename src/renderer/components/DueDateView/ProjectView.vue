@@ -1,57 +1,45 @@
 <template>
-  <div role="tablist">
-    <b-card no-body class="border-0" v-for="(project, index) in testprojects" :key="index">
-      <b-card-header header-tag="header" class="p-0 m-0" role="tab">
-        <b-btn block class="text-left p-0 ml-2" v-b-toggle="'index-'+index" variant="link" v-on:click="getMailBody(index)">
-          <div class="container">
-            <div class="row">
-              <div class="col-3 col-md-4 col-lg-4">
-                {{ project.project }}
-              </div>
-              <div class="col-3 col-md-3 col-lg-3">
-                <span class="border border-dark">
-                  <b-badge pill v-for="cat1 in getCategories1(index)" :key="cat1" v-bind:style="{ background: getColors1(cat1) }">&nbsp;</b-badge>
-                </span>
-              </div>
-              <div class="col-3 col-md-3 col-lg-3">
-                <span class="border border-dark">
-                  <b-badge pill v-for="cat2 in getCategories2(index)" :key="cat2" v-bind:style="{ background: getColors2(cat2) }">&nbsp;</b-badge>
-                </span>
-              </div>
-              <div class="col-3 col-md-2 col-lg-2">
-                {{ project.duedate }}
-              </div>
-            </div>
+  <div>
+    <b-btn block
+           class="text-left p-0 m-b-2"
+           style="background: lightgrey"
+           v-b-toggle="'index-'+index"
+           variant="link"
+           v-on:click="getProjectData(index)"
+           v-for="(project, index) in testprojects"
+           :key="index">
+      <div class="container">
+        <div class="row">
+          <div class="col-3 col-md-4 col-lg-4">
+            {{ project.project }}
           </div>
-        </b-btn>
-      </b-card-header>
-      <b-collapse :id="'index-'+index" accordion="my-accordion" role="tabpanel">
-        <b-card-body>
-          <project-information v-bind:project="project"
-                              v-bind:index="index"
-                              v-bind:getCategories1="getCategories1"
-                              v-bind:getCategories2="getCategories2"
-                              v-bind:getColors1="getColors1"
-                              v-bind:getColors2="getColors2">
-          </project-information>
-        </b-card-body>
-      </b-collapse>
-    </b-card>
+          <div class="col-3 col-md-3 col-lg-3">
+            <span class="border border-dark">
+              <b-badge pill v-for="cat1 in getCategories1(index)" :key="cat1" v-bind:style="{ background: getColors1(cat1) }">&nbsp;</b-badge>
+            </span>
+          </div>
+          <div class="col-3 col-md-3 col-lg-3">
+            <span class="border border-dark">
+              <b-badge pill v-for="cat2 in getCategories2(index)" :key="cat2" v-bind:style="{ background: getColors2(cat2) }">&nbsp;</b-badge>
+            </span>
+          </div>
+          <div class="col-3 col-md-2 col-lg-2">
+            {{ project.duedate }}
+          </div>
+        </div>
+      </div>
+    </b-btn>
   </div>
 </template>
 
 <script>
-  import Vue from 'vue'
+  // import Vue from 'vue'
   // import testmails from './testmails.json'
   import testcategories from './testcategories.json'
   import testprojects from './testprojects.json'
-  import ProjectInformation from '@/components/DueDateView/ProjectInformation'
-  import db from '@/datastore.js'
+  // import db from '@/datastore.js'
 
   export default {
-    components: {
-      ProjectInformation
-    },
     data () {
       return {
         // mails: testmails, // link to real mails!!
@@ -60,13 +48,12 @@
       }
     },
     methods: {
-      getMailBody (index) {
-        var data = this.testprojects[index].body
-        this.$root.$emit('emailBody', data)
+      getProjectData (index) {
+        this.$root.$emit('index', index)
       },
-      getProjects () {
+      /* getProjects () {
         Vue.prototype.$db = db
-      },
+      }, */
       getCategories1 (index) {
         var cat1 = this.testprojects[index].categories1
         return cat1
