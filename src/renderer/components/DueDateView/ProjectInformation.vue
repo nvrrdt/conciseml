@@ -25,6 +25,23 @@
                           v-model="categories1[index1]"
                           readonly>
             </b-form-input>
+            <b-input-group-append>
+              <!-- minus sign to remove categorie -->
+            </b-input-group-append>
+          </b-input-group>
+        </div>
+        <div>
+          <b-input-group>
+            <b-input-group-prepend>
+              <!-- color chooser needs to be inserted --> 
+            </b-input-group-prepend>
+            <b-form-input id="cat1labeladd"
+                          type="text"
+                          v-model="categories1[index1]">
+            </b-form-input>
+            <b-input-group-append>
+              <!-- + sign to add a categorie -->
+            </b-input-group-append>
           </b-input-group>
         </div>
       </b-form-group>
@@ -42,6 +59,23 @@
                           v-model="categories2[index2]"
                           readonly>
             </b-form-input>
+            <b-input-group-append>
+              <!-- minus sign to remove categorie -->
+            </b-input-group-append>
+          </b-input-group>
+        </div>
+        <div>
+          <b-input-group>
+            <b-input-group-prepend>
+              <!-- color chooser needs to be inserted --> 
+            </b-input-group-prepend>
+            <b-form-input id="cat2labeladd"
+                          type="text"
+                          v-model="categories1[index1]">
+            </b-form-input>
+            <b-input-group-append>
+              <!-- + sign to add a categorie -->
+            </b-input-group-append>
           </b-input-group>
         </div>
       </b-form-group>
@@ -89,7 +123,7 @@ export default {
       // obj.table.push
       console.log('test')
       var fs = require('fs')
-      var vm = this
+
       fs.writeFile('./src/renderer/components/DueDateView/testprojects.json', json, 'utf8', function (error) {
         if (error) {
           console.log('Failed' + error)
