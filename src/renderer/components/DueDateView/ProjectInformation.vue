@@ -26,7 +26,12 @@
                           readonly>
             </b-form-input>
             <b-input-group-append>
-              <!-- minus sign to remove categorie -->
+              <b-btn class="m-0 p-0"
+                     style="background: lightgrey"
+                     v-b-toggle="'removeCat1'"
+                     v-on:click="removeCat1()">
+                <icon name="minus-square" scale="2"></icon><!-- minus sign to remove categorie -->
+              </b-btn>
             </b-input-group-append>
           </b-input-group>
         </div>
@@ -34,13 +39,47 @@
           <b-input-group>
             <b-input-group-prepend>
               <!-- color chooser needs to be inserted --> 
+              <b-dropdown text="Color" variant="secondary">
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'lightblue' }">lightblue</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'blue' }">blue</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'lightgreen' }">lightgreen</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'green' }">green</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'cyan' }">cyan</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'red' }">red</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'yellow' }">yellow</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'orange' }">orange</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'pink' }">pink</b-badge>
+                </b-dropdown-item>
+              </b-dropdown>
             </b-input-group-prepend>
             <b-form-input id="cat1labeladd"
                           type="text"
                           v-model="categories1[index1]">
             </b-form-input>
             <b-input-group-append>
-              <!-- + sign to add a categorie -->
+              <b-btn class="m-0 p-0"
+                     style="background: lightgrey"
+                     v-b-toggle="'addCat1'"
+                     v-on:click="addCat1()">
+                <icon name="plus-square" scale="2"></icon><!-- + sign to add a categorie -->
+              </b-btn>
             </b-input-group-append>
           </b-input-group>
         </div>
@@ -60,21 +99,60 @@
                           readonly>
             </b-form-input>
             <b-input-group-append>
-              <!-- minus sign to remove categorie -->
+              <b-btn class="m-0 p-0"
+                     style="background: lightgrey"
+                     v-b-toggle="'removeCat2'"
+                     v-on:click="removeCat2()">
+                <icon name="minus-square" scale="2"></icon><!-- minus sign to remove categorie -->
+              </b-btn>
             </b-input-group-append>
           </b-input-group>
         </div>
         <div>
           <b-input-group>
             <b-input-group-prepend>
-              <!-- color chooser needs to be inserted --> 
+              <!-- color chooser needs to be inserted -->
+              <b-dropdown text="Color" variant="secondary">
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'lightblue' }">lightblue</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'blue' }">blue</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'lightgreen' }">lightgreen</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'green' }">green</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'cyan' }">cyan</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'red' }">red</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'yellow' }">yellow</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'orange' }">orange</b-badge>
+                </b-dropdown-item>
+                <b-dropdown-item>
+                  <b-badge v-bind:style="{ background: 'pink' }">pink</b-badge>
+                </b-dropdown-item>
+              </b-dropdown> 
             </b-input-group-prepend>
             <b-form-input id="cat2labeladd"
                           type="text"
                           v-model="categories1[index1]">
             </b-form-input>
             <b-input-group-append>
-              <!-- + sign to add a categorie -->
+              <b-btn class="m-0 p-0"
+                     style="background: lightgrey"
+                     v-b-toggle="'addCat2'"
+                     v-on:click="addCat2()">
+                <icon name="plus-square" scale="2"></icon><!-- + sign to add a categorie -->
+              </b-btn>
             </b-input-group-append>
           </b-input-group>
         </div>

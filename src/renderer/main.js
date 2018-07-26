@@ -11,6 +11,11 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import VueSplit from 'vue-split-panel'
 
+import 'vue-awesome/icons'
+import Icon from 'vue-awesome/components/Icon'
+
+Vue.component('icon', Icon)
+
 Vue.use(BootstrapVue)
 Vue.use(VueSplit)
 
