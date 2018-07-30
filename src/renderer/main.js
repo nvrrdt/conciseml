@@ -14,6 +14,10 @@ import VueSplit from 'vue-split-panel'
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
 
+import VueFire from 'vuefire'
+
+Vue.use(VueFire)
+
 Vue.component('icon', Icon)
 
 Vue.use(BootstrapVue)

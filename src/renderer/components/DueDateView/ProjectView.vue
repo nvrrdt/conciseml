@@ -24,7 +24,7 @@
             </span>
           </div>
           <div class="col-3 col-md-2 col-lg-2">
-            {{ project.duedate }}
+            {{ project.duedate }} / {{ test }}
           </div>
         </div>
       </div>
@@ -38,18 +38,24 @@
   import testcategories from './testcategories.json'
   import testprojects from './testprojects.json'
   // import db from '@/datastore.js'
+  import {db} from '@/firebase'
 
   export default {
     data () {
       return {
         // mails: testmails, // link to real mails!!
         testprojects: testprojects,
-        testcategories: testcategories
+        testcategories: testcategories,
+        test: 1
       }
     },
     methods: {
       getProjectData (index) {
         this.$root.$emit('index', index)
+        let vm = this
+        return db.ref('test').once('value').then(function (snapshot) {
+          vm.test = snapshot.val()
+        })
       },
       /* getProjects () {
         Vue.prototype.$db = db
