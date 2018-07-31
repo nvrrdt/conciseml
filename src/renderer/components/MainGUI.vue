@@ -15,7 +15,7 @@
           <div v-if="projectView">
             <Split direction="vertical">
               <SplitArea :size="30">
-                <project-information></project-information>
+                <!-- <project-information></project-information> -->
               </SplitArea>
               <SplitArea :size="70">
                 <preview-mail></preview-mail>

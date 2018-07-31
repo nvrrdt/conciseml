@@ -5,8 +5,8 @@
            style="background: lightgrey"
            v-b-toggle="'index-'+index"
            variant="link"
-           v-on:click="getProjectData(index)"
-           v-for="(project, index) in testprojects"
+           v-on:click="getProjectData(index, project)"
+           v-for="(project, index) in projects"
            :key="index">
       <div class="container">
         <div class="row">
@@ -15,16 +15,16 @@
           </div>
           <div class="col-3 col-md-3 col-lg-3">
             <span class="border border-dark">
-              <b-badge pill v-for="cat1 in getCategories1(index)" :key="cat1" v-bind:style="{ background: getColors1(cat1) }">&nbsp;</b-badge>
+              <b-badge pill v-for="cat1 in getCategories1(project)" :key="cat1" v-bind:style="{ background: getColors1(cat1) }">&nbsp;</b-badge>
             </span>
           </div>
           <div class="col-3 col-md-3 col-lg-3">
             <span class="border border-dark">
-              <b-badge pill v-for="cat2 in getCategories2(index)" :key="cat2" v-bind:style="{ background: getColors2(cat2) }">&nbsp;</b-badge>
+              <b-badge pill v-for="cat2 in getCategories2(project)" :key="cat2" v-bind:style="{ background: getColors2(cat2) }">&nbsp;</b-badge>
             </span>
           </div>
           <div class="col-3 col-md-2 col-lg-2">
-            {{ project.duedate }} / {{ test }}
+            {{ project.duedate }}
           </div>
         </div>
       </div>
@@ -33,39 +33,31 @@
 </template>
 
 <script>
-  // import Vue from 'vue'
-  // import testmails from './testmails.json'
   import testcategories from './testcategories.json'
-  import testprojects from './testprojects.json'
-  // import db from '@/datastore.js'
+  // import db from '@/datastore.js' // nedb
   import {db} from '@/firebase'
 
   export default {
     data () {
       return {
-        // mails: testmails, // link to real mails!!
-        testprojects: testprojects,
         testcategories: testcategories,
-        test: 1
+        projects: ''
       }
     },
     methods: {
-      getProjectData (index) {
+      getProjectData (index, project) {
         this.$root.$emit('index', index)
-        let vm = this
-        return db.ref('test').once('value').then(function (snapshot) {
-          vm.test = snapshot.val()
-        })
+        this.$root.$emit('project', project)
       },
-      /* getProjects () {
+      /* getProjects () { // nedb
         Vue.prototype.$db = db
       }, */
-      getCategories1 (index) {
-        var cat1 = this.testprojects[index].categories1
+      getCategories1 (project) {
+        var cat1 = project.categories1
         return cat1
       },
-      getCategories2 (index) {
-        var cat2 = this.testprojects[index].categories2
+      getCategories2 (project) {
+        var cat2 = project.categories2
         return cat2
       },
       getColors1 (cat1) {
@@ -76,6 +68,13 @@
         var color2 = this.testcategories.colors2[cat2]
         return color2
       }
+    },
+    mounted: function () {
+      let vm = this
+
+      db.ref('projects').once('value').then(function (snapshot) {
+        vm.projects = snapshot.val()
+      })
     }
   }
 </script>
