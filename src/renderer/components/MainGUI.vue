@@ -1,33 +1,35 @@
 <template>
   <b-container fluid>
-    <b-row>
-      <b-button size="sm" variant="primary" style="margin: 5px 5px 5px 5px" @click="setClassicView()">Classic view</b-button>
-      <b-button size="sm" variant="primary" style="margin: 5px 5px 5px 5px" @click="setProjectView()">Project view</b-button>
-      <!-- <b-button size="sm" variant="primary" style="margin: 5px 5px 5px 5px">History</b-button> -->
-    </b-row>
-    <b-row>
-      <Split style="height: 100vh" direction="horizontal">
-        <SplitArea :size="50">
-          <classic-view v-if="classicView"></classic-view>
-          <project-view v-if="projectView"></project-view>
-        </SplitArea>
-        <SplitArea :size="50">
-          <div v-if="projectView">
-            <Split direction="vertical">
-              <SplitArea :size="30">
-                <project-information></project-information>
-              </SplitArea>
-              <SplitArea :size="70">
-                <preview-mail></preview-mail>
-              </SplitArea>
-            </Split>
-          </div>
-          <div v-if="classicView">
-            <preview-mail></preview-mail>
-          </div>
-        </SplitArea>
-      </Split>
-    </b-row>
+    <div style="height: 100vh">
+      <b-row>
+        <b-button size="sm" variant="primary" style="margin: 5px 5px 5px 5px" @click="setClassicView()">Classic view</b-button>
+        <b-button size="sm" variant="primary" style="margin: 5px 5px 5px 5px" @click="setProjectView()">Project view</b-button>
+        <!-- <b-button size="sm" variant="primary" style="margin: 5px 5px 5px 5px">History</b-button> -->
+      </b-row>
+      <b-row>
+        <Split direction="horizontal">
+          <SplitArea :size="50">
+            <classic-view v-if="classicView"></classic-view>
+            <project-view v-if="projectView"></project-view>
+          </SplitArea>
+          <SplitArea :size="50">
+            <div v-if="projectView">
+              <Split direction="vertical">
+                <SplitArea :size="30">
+                  <project-information></project-information>
+                </SplitArea>
+                <SplitArea :size="70">
+                  <preview-mail></preview-mail>
+                </SplitArea>
+              </Split>
+            </div>
+            <div v-if="classicView">
+              <preview-mail></preview-mail>
+            </div>
+          </SplitArea>
+        </Split>
+      </b-row>
+    </div>
   </b-container>
 </template>
 
