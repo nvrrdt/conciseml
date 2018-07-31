@@ -5,8 +5,8 @@
            style="background: lightgrey"
            v-b-toggle="'index-'+index"
            variant="link"
-           v-on:click="getProjectData(index, project)"
-           v-for="(project, index) in projects"
+           v-on:click="getProjectData(index, project, key)"
+           v-for="(project, key, index) in projects"
            :key="index">
       <div class="container">
         <div class="row">
@@ -45,9 +45,10 @@
       }
     },
     methods: {
-      getProjectData (index, project) {
+      getProjectData (index, project, key) {
         this.$root.$emit('index', index)
         this.$root.$emit('project', project)
+        this.$root.$emit('key', key)
       },
       /* getProjects () { // nedb
         Vue.prototype.$db = db
