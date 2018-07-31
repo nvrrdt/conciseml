@@ -12,14 +12,19 @@
           <project-view v-if="projectView"></project-view>
         </SplitArea>
         <SplitArea :size="50">
-          <Split direction="vertical">
-            <SplitArea :size="30">
-              <project-information></project-information>
-            </SplitArea>
-            <SplitArea :size="70">
-              <preview-mail></preview-mail>
-            </SplitArea>
-          </Split>
+          <div v-if="projectView">
+            <Split direction="vertical">
+              <SplitArea :size="30">
+                <project-information></project-information>
+              </SplitArea>
+              <SplitArea :size="70">
+                <preview-mail></preview-mail>
+              </SplitArea>
+            </Split>
+          </div>
+          <div v-if="classicView">
+            <preview-mail></preview-mail>
+          </div>
         </SplitArea>
       </Split>
     </b-row>

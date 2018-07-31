@@ -5,12 +5,11 @@
 </template>
 
 <script>
-import testprojects from './testprojects.json'
+import {db} from '@/firebase'
 
 export default {
   data () {
     return {
-      testprojects: testprojects,
       mailBody: ''
     }
   },
@@ -18,7 +17,11 @@ export default {
   },
   mounted () {
     this.$root.$on('index', data => {
-      this.mailBody = this.testprojects[data].body
+      let vm = this
+
+      db.ref('projects').once('value').then(function (snapshot) {
+        vm.mailBody = snapshot.val()[data].body
+      })
     })
   }
 }
