@@ -5,7 +5,7 @@
            style="background: lightgrey"
            v-b-toggle="'index-'+index"
            variant="link"
-           v-on:click="getProjectData(index)"
+           v-on:click="getProjectData(project)"
            v-for="(project, index) in projects"
            :key="index">
       <div>
@@ -25,8 +25,8 @@
       }
     },
     methods: {
-      getProjectData (index) {
-        this.$root.$emit('index', index)
+      getProjectData (project) {
+        this.$root.$emit('project', project)
       }
     },
     mounted: function () {

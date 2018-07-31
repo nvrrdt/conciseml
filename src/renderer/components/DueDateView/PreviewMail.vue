@@ -1,27 +1,21 @@
 <template>
   <div>
-    <p>{{ mailBody }}</p>
+    <p>{{ body }}</p>
   </div>
 </template>
 
 <script>
-import {db} from '@/firebase'
-
 export default {
   data () {
     return {
-      mailBody: ''
+      body: ''
     }
   },
   methods: {
   },
   mounted () {
-    this.$root.$on('index', data => {
-      let vm = this
-
-      db.ref('projects').once('value').then(function (snapshot) {
-        vm.mailBody = snapshot.val()[data].body
-      })
+    this.$root.$on('project', data => {
+      this.body = data.body
     })
   }
 }
