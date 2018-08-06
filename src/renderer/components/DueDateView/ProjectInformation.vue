@@ -34,38 +34,16 @@
               </b-btn>
             </b-input-group-append>
           </b-input-group>
+          
+        </div>
+        <div>
           <b-input-group>
             <b-input-group-prepend>
               <!-- color chooser needs to be inserted --> 
-              <b-dropdown text="Color" variant="secondary">
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'lightblue' }">lightblue</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'blue' }">blue</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'lightgreen' }">lightgreen</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'green' }">green</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'cyan' }">cyan</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'red' }">red</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'yellow' }">yellow</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'orange' }">orange</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'pink' }">pink</b-badge>
-                </b-dropdown-item>
-              </b-dropdown>
+              <b-form-select v-model="selectedColor1" :style="{ background: selectedColor1 }">
+                <option :value="null">Choose color:</option>
+                <option v-for="(color, key) in colors" :key="key" :style="{ background: color.value }">{{ color.value }}</option>
+              </b-form-select>
             </b-input-group-prepend>
             <b-form-input id="cat1labeladd"
                           type="text"
@@ -105,38 +83,15 @@
               </b-btn>
             </b-input-group-append>
           </b-input-group>
+        </div>
+        <div>
           <b-input-group>
             <b-input-group-prepend>
               <!-- color chooser needs to be inserted -->
-              <b-dropdown text="Color" variant="secondary">
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'lightblue' }">lightblue</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'blue' }">blue</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'lightgreen' }">lightgreen</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'green' }">green</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'cyan' }">cyan</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'red' }">red</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'yellow' }">yellow</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'orange' }">orange</b-badge>
-                </b-dropdown-item>
-                <b-dropdown-item>
-                  <b-badge v-bind:style="{ background: 'pink' }">pink</b-badge>
-                </b-dropdown-item>
-              </b-dropdown> 
+              <b-form-select v-model="selectedColor2" :style="{ background: selectedColor2 }">
+                <option :value="null">Choose color:</option>
+                <option v-for="(color, key) in colors" :key="key" :style="{ background: color.value }">{{ color.value }}</option>
+              </b-form-select>
             </b-input-group-prepend>
             <b-form-input id="cat2labeladd"
                           type="text"
@@ -164,6 +119,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import testcategories from './testcategories.json'
 import {db} from '@/firebase'
 
@@ -172,7 +128,20 @@ export default {
     return {
       testcategories: testcategories,
       project: '',
-      key: ''
+      key: '',
+      selectedColor1: null,
+      selectedColor2: null,
+      colors: [
+        { value: 'lightblue' },
+        { value: 'blue' },
+        { value: 'lightgreen' },
+        { value: 'green' },
+        { value: 'cyan' },
+        { value: 'red' },
+        { value: 'yellow' },
+        { value: 'orange' },
+        { value: 'pink' }
+      ]
     }
   },
   methods: {
@@ -206,3 +175,33 @@ export default {
   }
 }
 </script>
+
+<style>
+  .lightblue {
+    background-color: lightblue;
+  }
+  .blue {
+    background-color: blue;
+  }
+  .lightgreen {
+    background-color: lightgreen;
+  }
+  .green {
+    background-color: green;
+  }
+  .cyan {
+    background-color: cyan;
+  }
+  .red {
+    background-color: red;
+  }
+  .yellow {
+    background-color: yellow;
+  }
+  .orange {
+    background-color: orange;
+  }
+  .pink {
+    background-color: pink;
+  }
+</style>
